@@ -71,6 +71,9 @@ Unicode码点也是采用类似的策略处理。
 
 
 	将一个整数转为字符串，一种方法是用fmt.Sprintf返回一个格式化的字符串；另一个方法是用strconv.Itoa(“整数到ASCII”)
+	FormatInt和FormatUint函数可以用不同的进制来格式化数字
+	fmt.Printf函数的%b、%d、%o和%x等参数提供功能往往比strconv包的Format函数方便很多
+	如果要将一个字符串解析为整数，可以使用strconv包的Atoi或ParseInt函数，还有用于解析无符号整数的ParseUint函数
 */
 func main() {
 	fmt.Println(len("hello,world!"))   //12
@@ -129,4 +132,11 @@ php语言 'java语言' "Python" \n\r\t`
 	x := 123
 	y := fmt.Sprintf("%d", x)
 	fmt.Println(y, strconv.Itoa(x)) // "123 123"
+	//FormatInt和FormatUint函数可以用不同的进制来格式化数字
+	fmt.Println(strconv.FormatInt(int64(x), 2)) // "1111011"
+
+	//字符串解析为整数
+	x, err := strconv.Atoi("123") // x is an int
+	z, err := strconv.ParseInt("123", 10, 64) // base 10, up to 64 bits
+	fmt.Println(z, err)
 }
