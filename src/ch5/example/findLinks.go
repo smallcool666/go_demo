@@ -4,7 +4,7 @@ package main
 */
 import (
 	"fmt"
-	"html"
+	"golang.org/x/net/html"
 	"os"
 )
 
