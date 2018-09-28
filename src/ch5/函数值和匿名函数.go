@@ -59,4 +59,5 @@ func main() {
 	fmt.Println(f1()) // "1"
 	fmt.Println(f1()) // "4"
 	fmt.Println(f1()) // "9"fmt.Println(f()) // "16"
+
 }
